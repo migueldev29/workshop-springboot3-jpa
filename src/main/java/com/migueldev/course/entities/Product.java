@@ -27,6 +27,7 @@ public class Product implements Serializable {
 	private Double price;
 	private String imgUrl;
 
+	//Foi criado um conjunto "Set" para que um produto não possa existir com a mesma categoria mais de uma vez
 	@ManyToMany
 	@JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
 	private Set<Category> categories = new HashSet<>();
